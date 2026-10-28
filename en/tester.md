@@ -14,8 +14,11 @@ Sign in at https://testswap.yednamo.com with Google (Yednamo ID). One account wo
    - Accept the testing invitation on Google Play.
    - Install the app. If the app is marked “With SDK”, install it **only via your personal link** from the test page:
      this is how the app confirms that you installed it.
-4. Open the app every day for 14 days.
-   - **With SDK**: the day is checked in automatically after launch.
+4. Open the app every day for 14 days. If the test started at 6 pm or later your time, the first day is the next one.
+   - **With SDK**: the day is checked in automatically after launch. The app verifies the installation through
+     Google Play Integrity: you need a certified Android device with Google Play; emulators and modified firmware
+     will not pass. Until the app confirms the installation you can check in manually on the website, but the test
+     counts only after confirmation.
    - **Without SDK**: press “I opened the app today” on the test page.
 5. From day 3, write feedback (at least 80 characters): what you liked, what you didn’t, what broke.
 
@@ -24,8 +27,11 @@ Sign in at https://testswap.yednamo.com with Google (Yednamo ID). One account wo
 - 14 days have passed and no more than 2 days were missed.
 - Feedback is written. If there is no feedback on day 15, you have 3 more days to write it.
 
+- SDK mode: the app confirmed the installation through Google Play Integrity at least once.
+
 A completed test earns **+10 points**, accepted feedback another **+2**.
-If the developer does not respond to your feedback within 3 days, it is accepted automatically.
+If the developer does not respond to your feedback within 3 days, it is accepted automatically. If the developer
+rejects your rewritten feedback too, a TestSwap moderator reviews it.
 
 ## Limits
 
