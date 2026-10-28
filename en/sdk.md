@@ -1,21 +1,50 @@
 # Android SDK
 
-The SDK confirms that a tester installed the app from Google Play via their personal TestSwap link and checks in
-test days automatically. It is optional.
+The SDK uses Google Play Integrity to confirm that a tester installed the app from Google Play via their personal
+TestSwap link and opens it every day on a real, certified device. Test days are checked in automatically.
+It is optional.
 
 ## How it works
 
 1. The tester gets a link like
    `https://play.google.com/store/apps/details?id=<package>&referrer=ts_<token>`.
-2. Google Play passes the `ts_<token>` tag to the app via the Install Referrer.
-3. On first launch the SDK sends the app key and the tag to `https://testswap.yednamo.com/sdk/v1/install`.
-4. On later launches the SDK sends `/sdk/v1/ping` (at most every 3 hours). The server counts one day per day
-   in the tester’s time zone.
+2. Google Play passes the `ts_<token>` tag to the app via the Install Referrer, so TestSwap knows whose participation it is.
+3. Once a day (in the tester’s time zone) the SDK gets a one-time code from TestSwap (`/sdk/v2/challenge`) and
+   requests a Play Integrity token with that code from Google Play (a classic request).
+4. The SDK sends the token to `/sdk/v2/checkin`. TestSwap decrypts it with your app’s keys and checks in the day
+   only if Google confirms all of the following:
+   - the request was made for your package with this one-time code, and it is fresh;
+   - Google Play recognized the build (`PLAY_RECOGNIZED`);
+   - the account got the app from Google Play (`LICENSED`);
+   - the device is certified (`MEETS_DEVICE_INTEGRITY`).
 5. Once the test is over, the SDK stops sending requests.
 
 Users who did not install the app via a TestSwap link send nothing.
 
-## Setup
+A test in SDK mode counts only if the app passed a Play Integrity check on the tester’s device at least once.
+Until the first check the tester can check in manually on the website; after it, only the SDK checks in days.
+
+## Requirements
+
+- The app’s `minSdk` is 23 (Android 6.0) or higher, as required by the Play Integrity library.
+- The app is distributed through Google Play (closed testing works).
+- The tester’s device has the Google Play Store and Google Play services.
+
+## 1. Play Integrity keys
+
+TestSwap verifies your app’s tokens itself, so it needs your app’s Play Integrity response keys.
+
+1. In Play Console, open your app’s Play Integrity API section and make sure the API is enabled.
+2. In the classic request settings (response encryption), choose to manage your own encryption keys instead of
+   Google-managed ones and download them. Step by step: https://developer.android.com/google/play/integrity/classic
+3. In the app dashboard on TestSwap, paste the **decryption key** and the **verification key** (both base64) and save.
+
+Until the keys are added, the app is not shown in the catalog and does not accept testers.
+
+The decryption key is stored encrypted and is never shown again. If your own server also decrypts classic
+Play Integrity tokens, it has to switch to the same keys. Standard requests are not affected.
+
+## 2. Setup
 
 ```kotlin
 // settings.gradle.kts
@@ -31,7 +60,7 @@ dependencyResolutionManagement {
 ```kotlin
 // app/build.gradle.kts
 dependencies {
-    implementation("com.github.yednamo:testswap-sdk-android:0.1.0")
+    implementation("com.github.yednamo:testswap-sdk-android:0.2.0")
 }
 ```
 
@@ -46,16 +75,23 @@ class App : Application() {
 
 Register the `App` class in `AndroidManifest.xml` (`android:name=".App"`). The library adds the `INTERNET` permission.
 
+Versions 0.1.x are no longer supported: the server answers their requests with 410.
+
 ## Data
 
-Only the app key (public, embedded in the build), the participation token and the SDK version are sent. No device
-identifiers, advertising IDs or user data.
+Only the app key (public, embedded in the build), the participation token, the Google Play Integrity token and the
+SDK version are sent. TestSwap stores only the verification result (passed or not, and the rejection reason), with no
+device identifiers, advertising IDs or user data.
 
-If your app worked without internet access before, the SDK adds the `INTERNET` permission. Update your privacy policy
-and the Data safety section in Play Console. For such apps the mode without SDK is simpler.
+The Integrity token is produced by Google Play. Describe your use of the Play Integrity API and TestSwap in your
+privacy policy and the Data safety section in Play Console. If your app worked without internet access before,
+the SDK adds the `INTERNET` permission; for such apps the mode without SDK is simpler.
 
 ## Checking
 
-1. List the app in “With SDK” mode and copy the key.
+1. List the app in “With SDK” mode, copy the app key and add the Play Integrity keys.
 2. Join the test from another account, install the app via the personal link and open it.
-3. The test page should show “The app confirmed the installation”, and the day should be marked as SDK.
+3. The test page should show “The app confirmed the installation through Google Play Integrity”, and the dashboard
+   the time of the last successful verification.
+4. If verification fails, the dashboard shows the reason of the last rejection (for example, keys of another app,
+   not installed from Google Play, the device failed the integrity check).
