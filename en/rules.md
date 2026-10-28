@@ -7,9 +7,13 @@
 | One tester for your app (developer) | −12 |
 | Lowest allowed balance | −180 |
 
-- A test lasts 14 days; at most 2 may be missed.
+- A test lasts 14 days; at most 2 may be missed. If the test started at 6 pm or later in the tester’s time zone,
+  the first day is the next one.
+- SDK mode: a test counts only if the app confirmed the installation through Google Play Integrity
+  (installed from Google Play by this account, certified device). After confirmation only the SDK checks in days.
 - Feedback: at least 80 characters, from day 3; after day 14 there are 3 more days to write it.
-- Feedback without the developer’s decision for 3 days is accepted automatically.
+- Feedback without the developer’s decision for 3 days is accepted automatically. Rejected feedback can be rewritten
+  once; a second rejection is reviewed by a moderator, who can revoke the test and refund the points.
 - At a time: up to 5 tests per tester, up to 3 open apps per developer.
 - Points have no monetary value and cannot be exchanged for money.
 

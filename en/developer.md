@@ -23,7 +23,8 @@ in a row. After that, Play Console shows a questionnaire about the test and you 
 - name, package (`applicationId`, cannot be changed later), short description;
 - **what to test**: specific scenarios, otherwise feedback will be generic;
 - access mode (Google Group or email list);
-- participation check: **with SDK** or **without SDK** (see [SDK](sdk.md));
+- participation check: **with SDK** or **without SDK** (see [SDK](sdk.md)). SDK mode requires Android 6+
+  and Play Integrity keys: without them the app does not appear in the catalog;
 - number of testers: 12–30, 15 recommended as a buffer.
 
 You can have up to 3 open apps at a time.
@@ -37,9 +38,12 @@ While the reserve for current testers does not fit the limit, new testers cannot
 ## 4. During the test
 
 The app dashboard shows every tester: days 1–14, check-in source (SDK or manual) and feedback.
+In SDK mode it also shows whether Google Play Integrity confirmed the installation, and for the app, the time of the
+last successful verification and the reason of the last rejection.
 
 - **Feedback**: accept it, or reject it with an explanation. Without a decision within 3 days, it is accepted automatically.
-  A tester can rewrite rejected feedback once.
+  A tester can rewrite rejected feedback once. If you reject the rewritten feedback too, a TestSwap moderator reviews it:
+  the test counts, and the moderator can revoke it and refund your points if the feedback really is empty or copied.
 - **Remove from test**: e.g. if a tester did not install the app. The reason is saved as a report.
 - **Pause**: no new testers join, current tests continue.
 
