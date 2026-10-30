@@ -9,24 +9,27 @@ It is optional.
 1. The tester gets a link like
    `https://play.google.com/store/apps/details?id=<package>&referrer=ts_<token>`.
 2. Google Play passes the `ts_<token>` tag to the app via the Install Referrer, so TestSwap knows whose participation it is.
-3. Once a day (in the tester’s time zone) the SDK gets a one-time code from TestSwap (`/sdk/v2/challenge`) and
-   requests a Play Integrity token with that code from Google Play (a classic request).
+3. Once a day, when the tester opens the app (an Activity starts), the SDK gets a one-time code from TestSwap
+   (`/sdk/v2/challenge`) and requests a Play Integrity token with that code from Google Play (a classic request).
+   A process started in the background without opening a screen does not check in the day. The day is counted
+   in the time zone the tester chose on the website when joining the test, not by the device’s clock.
 4. The SDK sends the token to `/sdk/v2/checkin`. TestSwap decrypts it with your app’s keys and checks in the day
    only if Google confirms all of the following:
    - the request was made for your package with this one-time code, and it is fresh;
    - Google Play recognized the build (`PLAY_RECOGNIZED`);
    - the account got the app from Google Play (`LICENSED`);
-   - the device is certified (`MEETS_DEVICE_INTEGRITY`).
+   - the device is certified (`MEETS_DEVICE_INTEGRITY` or `MEETS_STRONG_INTEGRITY`).
 5. Once the test is over, the SDK stops sending requests.
 
 Users who did not install the app via a TestSwap link send nothing.
 
 A test in SDK mode counts only if the app passed a Play Integrity check on the tester’s device at least once.
-Until the first check the tester can check in manually on the website; after it, only the SDK checks in days.
+In SDK mode only the SDK checks in days: there is no manual check-in button on the website for such tests.
 
 ## Requirements
 
-- The app’s `minSdk` is 23 (Android 6.0) or higher, as required by the Play Integrity library.
+- The app’s `minSdk` is 26 (Android 8.0) or higher: the system certificate stores of older versions do not trust
+  the certificate chain of the TestSwap site, so the SDK cannot connect to the server.
 - The app is distributed through Google Play (closed testing works).
 - The tester’s device has the Google Play Store and Google Play services.
 
@@ -60,7 +63,7 @@ dependencyResolutionManagement {
 ```kotlin
 // app/build.gradle.kts
 dependencies {
-    implementation("com.github.yednamo:testswap-sdk-android:0.2.0")
+    implementation("com.github.yednamo:testswap-sdk-android:0.2.1")
 }
 ```
 
@@ -80,8 +83,10 @@ Versions 0.1.x are no longer supported: the server answers their requests with 4
 ## Data
 
 Only the app key (public, embedded in the build), the participation token, the Google Play Integrity token and the
-SDK version are sent. TestSwap stores only the verification result (passed or not, and the rejection reason), with no
-device identifiers, advertising IDs or user data.
+SDK version are sent. TestSwap stores the verification result (passed or not, and the rejection reason) and the SDK
+version for each check-in, and for the app, the text of the last verification error, which the developer sees in the
+dashboard. The client IP only ends up in ordinary request logs, which rotate (about 30 MB). No device identifiers,
+advertising IDs or user data are stored.
 
 The Integrity token is produced by Google Play. Describe your use of the Play Integrity API and TestSwap in your
 privacy policy and the Data safety section in Play Console. If your app worked without internet access before,
