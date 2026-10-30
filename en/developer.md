@@ -14,6 +14,8 @@ in a row. After that, Play Console shows a questionnaire about the test and you 
      Testers join the group themselves.
    - **Email list**. Create a tester list in Play Console. When someone joins on TestSwap, you get an email and
      see the address in your dashboard: add it to the list and press “Access granted”.
+     If access is not granted within 7 days, the participation is closed automatically with no penalty for either side,
+     and the tester can join another app.
 3. Publish the release to the closed test and wait for Google’s review.
 
 ## 2. List the app on TestSwap
@@ -23,7 +25,7 @@ in a row. After that, Play Console shows a questionnaire about the test and you 
 - name, package (`applicationId`, cannot be changed later), short description;
 - **what to test**: specific scenarios, otherwise feedback will be generic;
 - access mode (Google Group or email list);
-- participation check: **with SDK** or **without SDK** (see [SDK](sdk.md)). SDK mode requires Android 6+
+- participation check: **with SDK** or **without SDK** (see [SDK](sdk.md)). SDK mode requires Android 8.0+
   and Play Integrity keys: without them the app does not appear in the catalog;
 - number of testers: 12–30, 15 recommended as a buffer.
 
@@ -44,8 +46,12 @@ last successful verification and the reason of the last rejection.
 - **Feedback**: accept it, or reject it with an explanation. Without a decision within 3 days, it is accepted automatically.
   A tester can rewrite rejected feedback once. If you reject the rewritten feedback too, a TestSwap moderator reviews it:
   the test counts, and the moderator can revoke it and refund your points if the feedback really is empty or copied.
-- **Remove from test**: e.g. if a tester did not install the app. The reason is saved as a report.
+- **Remove from test**: e.g. if a tester did not install the app. Possible only until day 3 of the test inclusive.
+  The reason is saved as a report.
 - **Pause**: no new testers join, current tests continue.
+
+If you delete your Yednamo account, your apps are closed and the running tests end without awarding points;
+already completed tests and awarded points are kept.
 
 ## 5. Google’s questionnaire
 
