@@ -17,6 +17,15 @@ in a row. After that, Play Console shows a questionnaire about the test and you 
      If access is not granted within 7 days, the participation is closed automatically with no penalty for either side,
      and the tester can join another app.
 3. Publish the release to the closed test and wait for Google’s review.
+4. **If the app has Google sign-in** (Credential Manager, Sign in with Google, Firebase Auth), check the signature.
+   Google Play re-signs the build with its app signing key, whose SHA-1 differs from your upload key. If only
+   the upload key is registered in Google Cloud, testers see the account picker but the sign-in never completes:
+   to them “the app is broken”, and they drop the test.
+   - Take the SHA-1 of the **app signing key**: Play Console → “Protected with Play” → “App signing”.
+   - Add it in Google Cloud → Google Auth Platform → Clients as a separate Android client with the same package
+     (or in Firebase → Project settings → SHA fingerprints). Keep the upload key for builds you install directly.
+     No re-release is needed; the change takes from 5 minutes to a few hours.
+   - Make sure the OAuth consent screen is “In production”: in “Testing” mode only listed test users can sign in.
 
 ## 2. List the app on TestSwap
 
