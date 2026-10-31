@@ -23,6 +23,12 @@ It is optional.
 
 Users who did not install the app via a TestSwap link send nothing.
 
+If a tester installed the app another way (Google Play search, the “Become a tester” page, the Google Play
+website), there is no tag in the Install Referrer. The tester then presses “I installed the app, link it” on
+the test page: the link `testswap://<package>/link?token=…` opens the installed app and the SDK (0.3+) takes
+the tag from it. The activity for this is declared by the library manifest; nothing to add in the app code.
+Play Integrity still verifies the install.
+
 A test in SDK mode counts only if the app passed a Play Integrity check on the tester’s device at least once.
 In SDK mode only the SDK checks in days: there is no manual check-in button on the website for such tests.
 
@@ -63,7 +69,7 @@ dependencyResolutionManagement {
 ```kotlin
 // app/build.gradle.kts
 dependencies {
-    implementation("com.github.yednamo:testswap-sdk-android:0.2.2")
+    implementation("com.github.yednamo:testswap-sdk-android:0.3.0")
 }
 ```
 
@@ -82,10 +88,11 @@ Versions 0.1.x are no longer supported: the server answers their requests with 4
 
 ## Data
 
-Only the app key (public, embedded in the build), the participation token, the Google Play Integrity token and the
-SDK version are sent. TestSwap stores the verification result (passed or not, and the rejection reason) and the SDK
-version for each check-in, and for the app, the text of the last verification error, which the developer sees in the
-dashboard. The client IP only ends up in ordinary request logs, which rotate (about 30 MB). No device identifiers,
+Only the app key (public, embedded in the build), the participation token, the Google Play Integrity token, the
+SDK version and, since SDK 0.3, the device model with Android version (“Samsung SM-A525F, Android 14”) and the app
+build version (“0.6.1 (13)”) are sent. TestSwap stores the verification result (passed or not, and the rejection
+reason), the SDK version, the model and the versions, which the developer sees next to the tester in the dashboard,
+and for the app, the text of the last verification error. The client IP only ends up in ordinary request logs, which rotate (about 30 MB). No device identifiers,
 advertising IDs or user data are stored.
 
 The Integrity token is produced by Google Play. Describe your use of the Play Integrity API and TestSwap in your
