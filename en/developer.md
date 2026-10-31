@@ -39,9 +39,14 @@ While the reserve for current testers does not fit the limit, new testers cannot
 
 ## 4. During the test
 
-The app dashboard shows every tester: days 1–14, check-in source (SDK or manual) and feedback.
-In SDK mode it also shows whether Google Play Integrity confirmed the installation, and for the app, the time of the
-last successful verification and the reason of the last rejection.
+The app dashboard starts with three numbers: joined on the site, joined the group (as reported by testers; next to it
+a link to the group’s member list in Google Groups, visible only to the group owner), opened the app (in SDK mode
+confirmed by Play Integrity, without SDK the first check-in). Below, every tester: their current step and when they
+first opened the app, days 1–14, check-in source (SDK or manual) and feedback. For the app, the time of the last
+successful Integrity verification and the reason of the last rejection.
+
+A tester who has not opened the app within 3 days is removed automatically (with a warning email on day 2),
+and the spot frees up for someone else.
 
 - **Feedback**: accept it, or reject it with an explanation. Without a decision within 3 days, it is accepted automatically.
   A tester can rewrite rejected feedback once. If you reject the rewritten feedback too, a TestSwap moderator reviews it:
@@ -49,6 +54,9 @@ last successful verification and the reason of the last rejection.
 - **Remove from test**: e.g. if a tester did not install the app. Possible only until day 3 of the test inclusive.
   The reason is saved as a report.
 - **Pause**: no new testers join, current tests continue.
+- **Close app**: do this only after you have applied in Play Console. Until then testers are asked not to leave the
+  Google group (Google only counts testers opted in for the last 14 days). After closing, everyone who tested gets
+  an email saying they can leave the group.
 
 If you delete your Yednamo account, your apps are closed and the running tests end without awarding points;
 already completed tests and awarded points are kept.
