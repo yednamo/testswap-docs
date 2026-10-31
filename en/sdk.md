@@ -86,6 +86,10 @@ Register the `App` class in `AndroidManifest.xml` (`android:name=".App"`). The l
 
 Versions 0.1.x are no longer supported: the server answers their requests with 410.
 
+After the test is over the SDK does nothing: copies without a tag stay silent from the start, and on testers’ devices
+it stops for good as soon as the server replies that the test is over. The library still ships in your build until you
+remove it, though: in the first release after publishing, drop the dependency and the `TestSwap.init` call.
+
 ## Data
 
 Only the app key (public, embedded in the build), the participation token, the Google Play Integrity token, the
