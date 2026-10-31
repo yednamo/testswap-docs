@@ -15,7 +15,10 @@ Sign in at https://testswap.yednamo.com with Google (Yednamo ID). One account wo
      and you can join another app.
    - Accept the testing invitation on Google Play.
    - Install the app. If the app is marked “With SDK”, install it **only via your personal link** from the test page:
-     this is how the app confirms that you installed it.
+     this is how the app confirms that you installed it. Open the link in Chrome on your phone, not inside a messenger,
+     and do not download the app from the “Become a tester” page.
+   - If the app is already installed but the test page shows no confirmation, press “I installed the app, link it”
+     there, on the phone where the app is: the app opens and receives your tag.
 4. Open the app every day for 14 days. Days are counted in the time zone you chose on the website when joining
    the test, not by the device’s clock. If the test started at 6 pm or later in that time zone, the first day is the next one.
    - **With SDK**: the day is checked in automatically when you open the app (actually open a screen, not when
