@@ -24,7 +24,13 @@ Sign in at https://testswap.yednamo.com with Google (Yednamo ID). One account wo
      In SDK mode only the app checks in days: there is no manual check-in button on the website for such tests,
      and the test counts only after the installation is confirmed.
    - **Without SDK**: press “I opened the app today” on the test page.
-5. From day 3, write feedback (at least 80 characters): what you liked, what you didn’t, what broke.
+   If the app is still not opened by the end of day 3 (no check-in at all), the participation closes by itself and
+   the spot goes to another tester. We warn you by email on day 2.
+5. From day 1, write feedback (at least 80 characters): what you liked, what you didn’t, what broke, what was unclear.
+   If something is unclear from the start, that is already feedback; no need to wait.
+6. After the test is completed, do not leave the Google testers group or opt out of the test on Google Play until
+   the developer closes the test: Google only counts testers who stay in the test. We will email you when you can
+   leave. You can uninstall the app meanwhile.
 
 ## When a test counts
 
