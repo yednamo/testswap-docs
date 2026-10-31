@@ -63,7 +63,7 @@ dependencyResolutionManagement {
 ```kotlin
 // app/build.gradle.kts
 dependencies {
-    implementation("com.github.yednamo:testswap-sdk-android:0.2.1")
+    implementation("com.github.yednamo:testswap-sdk-android:0.2.2")
 }
 ```
 
