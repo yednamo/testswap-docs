@@ -78,6 +78,9 @@ Useful when testers use the app but have not linked it to the site: Google count
 If you delete your Yednamo account, your apps are closed and the running tests end without awarding points;
 already completed tests and awarded points are kept.
 
+A tester who left on their own, did not start within 3 days or did not get access within 7 days can join again once:
+the test starts over for them, and the dashboard shows both participations. A tester you removed cannot return.
+
 ## 5. Showcase and public feedback
 
 - Once the app is live on Google Play, press “Published on Google Play” in the “Showcase” panel of the app
