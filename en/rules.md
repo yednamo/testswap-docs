@@ -35,6 +35,8 @@ it) shows facts only: for a tester, completed and not completed tests, accepted 
 a developer, apps, testers who completed, how fast feedback decisions and chat replies are, feedback accepted
 automatically through silence, reports. Tests not completed through no fault of the tester (the developer did not
 grant access, closed the app, or the participation was closed because the app was never opened within 3 days) do not count.
+If a tester returned to an app after leaving, only the latest participation counts: someone who came back and
+completed the test gets no minus for the first attempt.
 
 - **Newcomer**: no completed test yet and no tester who completed.
 - **Reliable**: 5 completed tests as a tester, or 12 testers who completed as a developer, and no reports.
