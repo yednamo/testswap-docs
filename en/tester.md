@@ -61,8 +61,10 @@ conversation. The chat does not replace feedback: points are awarded only for fe
 ## Limits
 
 - At most 5 tests at a time.
-- You cannot rejoin the same app.
 - You can leave a test at any time, but you will not get points for it.
+- You can return to the same app once if you left on your own, did not open the app within 3 days, or the developer
+  did not grant access within 7 days. The test then starts over: a new 14 days, earlier check-ins do not count.
+  If the developer removed you or the test did not count, you cannot return. There is no third time.
 
 ## Reminders
 
