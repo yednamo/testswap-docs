@@ -47,6 +47,15 @@ A completed test earns **+10 points**, accepted feedback another **+2**.
 If the developer does not respond to your feedback within 3 days, it is accepted automatically. If the developer
 rejects your rewritten feedback too, a TestSwap moderator reviews it.
 
+## Messages to the developer
+
+The test page has a private chat with the developer: questions about installing, signing in, unclear parts of the app.
+Messages appear instantly, without reloading the page. If you have not read a reply within 10 minutes, you get an
+email (at most once an hour per conversation). You can write while the test is running and for 7 more days after it
+ends; after that the conversation is read-only. One message is up to 2000 characters, at most 30 messages per hour.
+Nobody sees contact details, only names. For abuse or spam there is a “Report” button: a moderator reviews the
+conversation. The chat does not replace feedback: points are awarded only for feedback on the test page.
+
 ## Limits
 
 - At most 5 tests at a time.

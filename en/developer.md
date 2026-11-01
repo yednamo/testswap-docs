@@ -62,8 +62,14 @@ Useful when testers use the app but have not linked it to the site: Google count
 - **Feedback**: accept it, or reject it with an explanation. Without a decision within 3 days, it is accepted automatically.
   A tester can rewrite rejected feedback once. If you reject the rewritten feedback too, a TestSwap moderator reviews it:
   the test counts, and the moderator can revoke it and refund your points if the feedback really is empty or copied.
-- **Remove from test**: e.g. if a tester did not install the app. Possible only until day 3 of the test inclusive.
-  The reason is saved as a report.
+- **Messages**: a private chat with each tester. The “Messages” page collects conversations across all your apps,
+  unread first, each with the app, the tester’s step and test day; in the app dashboard every tester has a
+  “Messages” button. Messages are delivered instantly; if the recipient has not read one within 10 minutes, they get
+  an email (at most once an hour per conversation). You can write to a tester while their participation exists; a
+  tester can write while the test is running and for 7 more days after. Up to 2000 characters, at most 30 messages
+  per hour. The “Report” button sends the conversation to a moderator.
+- **Remove from test**: e.g. if a tester did not install the app. A tester who has already checked in can be removed
+  only until day 3 of the test inclusive; one who never opened the app, at any time. The reason is saved as a report.
 - **Pause**: no new testers join, current tests continue.
 - **Close app**: do this only after you have applied in Play Console. Until then testers are asked not to leave the
   Google group (Google only counts testers opted in for the last 14 days). After closing, everyone who tested gets
