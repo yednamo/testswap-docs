@@ -55,7 +55,9 @@ first opened the app, days 1–14, check-in source (SDK or manual) and feedback.
 successful Integrity verification and the reason of the last rejection.
 
 A tester who has not opened the app within 3 days is removed automatically (with a warning email on day 2),
-and the spot frees up for someone else.
+and the spot frees up for someone else. You can turn this off in the app settings (“Free the spot
+automatically…”): the site then only shows “not opened yet”, and you remove testers manually, at any time.
+Useful when testers use the app but have not linked it to the site: Google counts them anyway.
 
 - **Feedback**: accept it, or reject it with an explanation. Without a decision within 3 days, it is accepted automatically.
   A tester can rewrite rejected feedback once. If you reject the rewritten feedback too, a TestSwap moderator reviews it:

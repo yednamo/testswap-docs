@@ -14,7 +14,8 @@
   there is no manual check-in on the website for such tests.
 - If there is no check-in by the end of day 3 (in SDK mode: no confirmed installation), the participation is
   closed without points and the spot frees up for another tester. A warning email is sent on day 2. Such a case
-  does not count as a failed test in the tester’s reliability.
+  does not count as a failed test in the tester’s reliability. The developer can turn this off in the app settings;
+  then they remove testers who never started manually, at any time.
 - Feedback: at least 80 characters, from day 1; after day 14 there are 3 more days to write it. If there is no
   feedback by the end of day 17, the test is closed as not completed and no points are awarded.
 - After the test is completed, do not leave the Google testers group or opt out of the test on Google Play until
