@@ -44,6 +44,8 @@ Sign in at https://testswap.yednamo.com with Google (Yednamo ID). One account wo
 - SDK mode: the app confirmed the installation through Google Play Integrity at least once.
 
 A completed test earns **+10 points**, accepted feedback another **+2**.
+If the developer enabled showing feedback, your accepted feedback with your name may appear on the public app page
+and on the “Launched” showcase. Write feedback that can be shown.
 If the developer does not respond to your feedback within 3 days, it is accepted automatically. If the developer
 rejects your rewritten feedback too, a TestSwap moderator reviews it.
 

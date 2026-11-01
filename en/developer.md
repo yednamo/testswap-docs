@@ -78,7 +78,17 @@ Useful when testers use the app but have not linked it to the site: Google count
 If you delete your Yednamo account, your apps are closed and the running tests end without awarding points;
 already completed tests and awarded points are kept.
 
-## 5. Google’s questionnaire
+## 5. Showcase and public feedback
+
+- Once the app is live on Google Play, press “Published on Google Play” in the “Showcase” panel of the app
+  dashboard. The app appears on the [“Launched”](https://testswap.yednamo.com/en/launched) page and on the home
+  page: name, category, description, your name with a profile link, how many testers completed the test, the date
+  and a Google Play button. It is a free mention for you and social proof for the service. The mark can be removed.
+- “Show accepted feedback on the app page” (in the app form or in the “Showcase” panel): the public app page then
+  shows up to 10 latest accepted feedback entries with the tester’s name and date, and the showcase shows one quote
+  from the newest. Off by default. Rejected and undecided feedback is never shown.
+
+## 6. Google’s questionnaire
 
 The “Draft answers for Google” page turns your test statistics and feedback into draft answers
 (in the interface language or in English). Review them and make sure to add what you changed after the feedback.

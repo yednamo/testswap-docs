@@ -28,6 +28,21 @@
   already completed tests and awarded points are kept.
 - Points have no monetary value and cannot be exchanged for money.
 
+## Reputation
+
+There are no ratings or stars. Everyone’s profile (the name in the dashboard, in the chat or on the app page links to
+it) shows facts only: for a tester, completed and not completed tests, accepted and rejected feedback, reports; for
+a developer, apps, testers who completed, how fast feedback decisions and chat replies are, feedback accepted
+automatically through silence, reports. Tests not completed through no fault of the tester (the developer did not
+grant access, closed the app, or the participation was closed because the app was never opened within 3 days) do not count.
+
+- **Newcomer**: no completed test yet and no tester who completed.
+- **Reliable**: 5 completed tests as a tester, or 12 testers who completed as a developer, and no reports.
+
+After a completed test, each side can press “Recommend” for the other. A recommendation is positive only, with no
+text and no reply; it can be withdrawn. A developer’s profile is visible to everyone, a tester’s profile only to
+signed-in users.
+
 ## Not allowed
 
 Several accounts per person, emulators and device farms, joining without installing, copied or empty feedback,
