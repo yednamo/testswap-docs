@@ -63,7 +63,8 @@ Useful when testers use the app but have not linked it to the site: Google count
   A tester can rewrite rejected feedback once. If you reject the rewritten feedback too, a TestSwap moderator reviews it:
   the test counts, and the moderator can revoke it and refund your points if the feedback really is empty or copied.
 - **Messages**: a private chat with each tester. The “Messages” page collects conversations across all your apps,
-  unread first, each with the app, the tester’s step and test day; in the app dashboard every tester has a
+  unread first, each with the app, the tester’s step and test day. The list shows only conversations that already
+  have a message; start a conversation with a tester from the app dashboard, where every tester has a
   “Messages” button. Messages are delivered instantly; if the recipient has not read one within 10 minutes, they get
   an email (at most once an hour per conversation). You can write to a tester while their participation exists; a
   tester can write while the test is running and for 7 more days after. Up to 2000 characters, at most 30 messages
