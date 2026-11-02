@@ -88,6 +88,16 @@ the test starts over for them, and the dashboard shows both participations. A te
   dashboard. The app appears on the [“Launched”](https://testswap.yednamo.com/en/launched) page and on the home
   page: name, category, description, your name with a profile link, how many testers completed the test, the date
   and a Google Play button. It is a free mention for you and social proof for the service. The mark can be removed.
+- The site checks that the app’s page really exists on Google Play: it opens
+  `play.google.com/store/apps/details?id=<package>` without signing in. While Google Play answers “not found”
+  (the app is not published yet or is only in closed testing), the mark cannot be set; if the release just went
+  live, try again in an hour. An app in open testing passes the check because its page is public. If the check
+  itself failed (Google did not answer), try again later.
+- After that the page is checked daily. A single Google Play hiccup changes nothing; if the page is missing for more
+  than 36 hours in a row (two checks), the app leaves the showcase and you get an email. Once it is back on Google
+  Play, press “Published on Google Play” again. The time of the last check is shown in the “Showcase” panel. If the
+  app is published but the check does not see it (for example, it is not available in Europe, where the server
+  checks from), write to support@yednamo.com.
 - “Show accepted feedback on the app page” (in the app form or in the “Showcase” panel): the public app page then
   shows up to 10 latest accepted feedback entries with the tester’s name and date, and the showcase shows one quote
   from the newest. Off by default. Rejected and undecided feedback is never shown.
