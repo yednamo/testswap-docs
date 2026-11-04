@@ -8,10 +8,10 @@ as Google requires for new personal developer accounts.
 
 ## Українською
 
-- [Покрокова інструкція для тестувальника](uk/guide-tester.md) зі скріншотами: вхід, група Google, встановлення,
-  14 днів, відгук.
-- [Покрокова інструкція для розробника](uk/guide-developer.md) зі скріншотами: Play Console, розміщення, звідки
-  взяти SDK і як підключити.
+- [Покрокова інструкція для тестувальника](https://testswap.yednamo.com/guide/tester) зі скріншотами: вхід, група
+  Google, встановлення, 14 днів, відгук (копія тут: [uk/guide-tester.md](uk/guide-tester.md)).
+- [Покрокова інструкція для розробника](https://testswap.yednamo.com/guide/dev) зі скріншотами: Play Console,
+  розміщення, звідки взяти SDK і як підключити (копія тут: [uk/guide-developer.md](uk/guide-developer.md)).
 - [Тестувальнику](uk/tester.md): як взяти участь у тесті й отримати бали.
 - [Розробнику](uk/developer.md): як розмістити застосунок і налаштувати Play Console.
 - [SDK для Android](uk/sdk.md): автоматичне підтвердження встановлення й днів тесту.
@@ -19,10 +19,10 @@ as Google requires for new personal developer accounts.
 
 ## English
 
-- [Step-by-step guide for testers](en/guide-tester.md) with screenshots: sign-in, Google group, install, 14 days,
-  feedback.
-- [Step-by-step guide for developers](en/guide-developer.md) with screenshots: Play Console, listing, where to get
-  the SDK and how to add it.
+- [Step-by-step guide for testers](https://testswap.yednamo.com/en/guide/tester) with screenshots: sign-in, Google
+  group, install, 14 days, feedback (copy here: [en/guide-tester.md](en/guide-tester.md)).
+- [Step-by-step guide for developers](https://testswap.yednamo.com/en/guide/dev) with screenshots: Play Console,
+  listing, where to get the SDK and how to add it (copy here: [en/guide-developer.md](en/guide-developer.md)).
 - [For testers](en/tester.md): how to take part in a test and earn points.
 - [For developers](en/developer.md): how to list an app and set up Play Console.
 - [Android SDK](en/sdk.md): automatic confirmation of installation and test days.

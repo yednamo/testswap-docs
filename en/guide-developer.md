@@ -1,5 +1,9 @@
 # Step-by-step guide for developers
 
+> This guide is also on the site, with a table of contents and the same screenshots:
+> https://testswap.yednamo.com/en/guide/dev. The text lives in the testswap-web repository
+> (`web/src/guides/en/dev.md`); this is a copy.
+
 How to list an app on TestSwap, where to get the SDK and how to add it to your code. Short reference without
 screenshots: [For developers](developer.md), [SDK](sdk.md), [Rules and points](rules.md).
 

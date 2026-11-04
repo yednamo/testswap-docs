@@ -1,5 +1,9 @@
 # Step-by-step guide for testers
 
+> This guide is also on the site, with a table of contents and the same screenshots:
+> https://testswap.yednamo.com/en/guide/tester. The text lives in the testswap-web repository
+> (`web/src/guides/en/tester.md`); this is a copy.
+
 How to find an app, join the testers group, install the app and get through 14 days. Short reference without
 screenshots: [For testers](tester.md), [Rules and points](rules.md).
 
