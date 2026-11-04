@@ -43,9 +43,11 @@ Play Integrity перевіряє встановлення так само.
 
 TestSwap перевіряє токени вашого застосунку сам, тож йому потрібні ключі відповіді Play Integrity.
 
-1. У Play Console відкрийте розділ Play Integrity API свого застосунку й переконайтеся, що API увімкнено.
-2. У налаштуваннях classic-запитів (шифрування відповіді) оберіть власні ключі шифрування замість ключів Google
-   і завантажте їх. Покроково: https://developer.android.com/google/play/integrity/classic
+1. У Play Console: «Захищено за допомогою Google Play» → розділ «Play Integrity API» → «Керувати» (Manage).
+   Переконайтеся, що API увімкнено й зв'язано проєкт Google Cloud.
+2. У розділі «Класичні запити» (Classic requests) → «Шифрування відповідей» (Response encryption) натисніть
+   «Змінити», виберіть «Завантажити ключі шифрування моїх відповідей і керувати ними самостійно» (Manage and download
+   my response encryption keys) і завантажте ключі. Покроково: https://developer.android.com/google/play/integrity/classic
 3. У кабінеті застосунку в TestSwap вставте **ключ розшифрування** й **ключ перевірки** (обидва в base64) і збережіть.
 
 Поки ключі не додано, застосунок не показується в каталозі й не приймає тестувальників.
