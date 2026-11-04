@@ -23,8 +23,9 @@ This happens on Google’s side, before or after listing on TestSwap.
 2. Create a Google Group for testers: https://groups.google.com → **Create group**. Under “Who can join the group”
    choose **“Anyone on the web can join”**; conversations can be hidden. Note the group address,
    `name@googlegroups.com`.
-3. In Play Console: Closed testing → **Testers** tab → **Create list** → add the group address. Save. You do not
-   need the “Join on the web” link from there: TestSwap builds it from the package name.
+3. In Play Console, on the closed testing page press **Manage track** → **Testers** tab → choose **Google Groups**,
+   enter the group address and **Save changes**. You do not need the “Copy link” from there: TestSwap builds it
+   from the package name.
 4. Upload a build to the closed testing track and publish the release. Wait for Google’s review (usually up to a
    few days).
 5. If the app has Google sign-in, add the SHA-1 of the **Google Play app signing key** (Play Console → Protected
@@ -82,11 +83,11 @@ the catalog.
 
 Where to get the keys:
 
-1. Play Console → your app → **Play Integrity API** (in the left menu, under “Advanced settings” or “Release →
-   App integrity”, depending on the console version). Make sure the API is enabled and a Google Cloud project
-   is linked.
-2. In **“Classic requests → Response encryption”** press **“Change”**, choose **“Manage and download my
-   response encryption keys”**, then **“Download keys”**.
+1. Play Console → your app → **Protected with Play** in the left menu → the **Play Integrity API** section →
+   **Manage**. If the API is not enabled yet, press **Get started** there and link a Google Cloud project.
+2. Scroll to **Classic requests**. **Response encryption** is “Managed by Google” at first: press **Change** and
+   choose **“Manage and download my response encryption keys”**. The key file downloads automatically; later you
+   can get it again with **Download keys**.
 3. The downloaded file has two base64 lines: the **decryption key** and the **verification key**. Paste them into
    the matching fields on TestSwap and press **“Save keys”**.
 
